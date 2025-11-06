@@ -98,7 +98,7 @@ def go(config: DictConfig):
             # step
 
             _ = mlflow.run(
-                f"{config['main']['components_repository']}/train_random_forest",
+                os.path.join(hydra.utils.get_original_cwd(), "src", "train_random_forest"),
                 "main",
                 parameters={
                     "trainval_artifact": "trainval_data.csv:latest",
