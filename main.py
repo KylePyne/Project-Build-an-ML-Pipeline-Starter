@@ -58,9 +58,7 @@ def go(config: DictConfig):
                     "input_artifact": "sample.csv:latest",
                     "output_artifact": "clean_sample.csv",
                     "output_type": "clean_sample",
-                    "output_description": "Data after removing outliers",
-                    "min_price": config["etl"]["min_price"],
-                    "max_price": config["etl"]["max_price"],
+                    "output_description": "Data after removing outliers"
                 },
             )
 
@@ -72,6 +70,8 @@ def go(config: DictConfig):
                     "csv": "clean_sample.csv:latest",
                     "ref": "sample.csv:latest",
                     "kl_threshold": config["data_check"]["kl_threshold"],
+                    "min_price": config["etl"]["min_price"],
+                    "max_price": config["etl"]["max_price"]
                 },
             )
 
